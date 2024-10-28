@@ -74,6 +74,6 @@ This project contains all the necessary boilerplate to setup a multi-tenant SaaS
 
 #### Conditions
 
-- Only owners may transfer organization ownership
-- Only administrators and project authors may update/delete the project
-- Members can leave their own organization
+- Only owners may transfer organization ownership;
+- Only administrators and project authors may update/delete the project;
+- Members can leave their own organization;
