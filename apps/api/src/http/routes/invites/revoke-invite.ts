@@ -43,7 +43,7 @@ export async function revokeInvite(app: FastifyInstance) {
           )
         }
 
-        const invite = await prisma.member.findUnique({
+        const invite = await prisma.invite.findUnique({
           where: {
             id: inviteId,
             organizationId: organization.id,

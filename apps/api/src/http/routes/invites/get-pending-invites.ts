@@ -25,10 +25,14 @@ export async function getPendingInvites(app: FastifyInstance) {
                   role: roleSchema,
                   email: z.string().email(),
                   createdAt: z.date(),
+                  organization: z.object({
+                    name: z.string(),
+                  }),
                   author: z
                     .object({
                       id: z.string().uuid(),
                       name: z.string().nullable(),
+                      avatarUrl: z.string().url().nullable(),
                     })
                     .nullable(),
                 }),
@@ -60,11 +64,17 @@ export async function getPendingInvites(app: FastifyInstance) {
               select: {
                 id: true,
                 name: true,
+                avatarUrl: true,
+              },
+            },
+            organization: {
+              select: {
+                name: true,
               },
             },
           },
-          orderBy: {
-            createdAt: 'desc',
+          where: {
+            email: user.email,
           },
         })
 

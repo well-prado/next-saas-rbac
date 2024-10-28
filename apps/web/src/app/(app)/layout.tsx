@@ -10,7 +10,7 @@ export default function AppLayout({
   sheet: React.ReactNode
 }>) {
   if (!isAuthenticated()) {
-    redirect('/auth/sign-in')
+    redirect('/sign-in')
   }
 
   return (

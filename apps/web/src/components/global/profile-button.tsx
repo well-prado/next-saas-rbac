@@ -40,7 +40,7 @@ export async function ProfileButton() {
             <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
           )}
         </Avatar>
-        <ChevronDown className="text-muted-foreground size-4" />
+        <ChevronDown className="size-4 text-muted-foreground" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="mt-2">
         <DropdownMenuItem asChild>

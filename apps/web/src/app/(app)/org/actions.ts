@@ -107,6 +107,8 @@ export async function createOrganizationAction(data: FormData) {
       domain,
       shouldAttachUsersByDomain,
     })
+
+    revalidateTag('organizations')
   } catch (error) {
     if (error instanceof HTTPError) {
       const { message } = await error.response.json()
